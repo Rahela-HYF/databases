@@ -10,9 +10,15 @@ const DB_PATH = path.join(__dirname, '..', 'chinook.sqlite');
 
 const db = new sqlite3.Database(DB_PATH);
 
-const userInput = {};
+const userInput = {
+  tableName:process.argv[2],
+  columnName:process.argv[3],
+  searchString:process.argv[4],
+  numberEntries: process.argv[5]
+};
 
-const queryString = ``;
+const queryString = `SELECT * FROM ${userInput.tableName} 
+WHERE ${userInput.columnName} LIKE'%${userInput.searchString}%'limit ${userInput.numberEntries}`;
 
 db.all(queryString, (err, rows) => {
   if (err) {
