@@ -16,7 +16,7 @@ const userInput = {
 };
 
 const queryString = `SELECT * FROM Invoice order by 
- ${userInput.columnName} ${userInput.order} LIMIT 3`;
+ ${userInput.columnName} ${userInput.order}`;
 
 db.all(queryString, (err, rows) => {
   if (err) {

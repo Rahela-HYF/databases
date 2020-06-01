@@ -16,7 +16,7 @@ const userInput = {
 };
 
 const queryString = `SELECT DISTINCT ${userInput.columnName} FROM ${userInput.tableName}
-LIMIT 20`;
+LIMIT 0,20`;
 
 db.all(queryString, (err, rows) => {
   if (err) {

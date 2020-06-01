@@ -18,7 +18,7 @@ const userInput = {
 
 // hint:  `... LIKE '%${userInput.searchString}%'`
 const queryString = `SELECT * FROM ${userInput.tableName} 
-WHERE ${userInput.columnName} LIKE'%${userInput.searchString}%'limit 2`;
+WHERE ${userInput.columnName} LIKE'%${userInput.searchString}%'`;
 
 db.all(queryString, (err, rows) => {
   if (err) {
